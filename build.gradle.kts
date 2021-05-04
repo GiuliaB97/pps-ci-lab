@@ -15,15 +15,15 @@ repositories {
 dependencies{
     implementation("junit:junit:4.13.1")
     implementation("commons-io:commons-io:+")
-    implementation("org.scala-lang:scala-library:2.12.2")      //SCALA
-    implementation("org.codehaus.groovy:groovy-all:2.4.15")    //GROOVY
-    implementation(kotlin("script-runtime"))                            //KOTLIN
+    implementation("org.scala-lang:scala-library:2.12.2")
+    implementation("org.codehaus.groovy:groovy-all:2.4.15")
+    implementation(kotlin("script-runtime"))
 
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.7.1")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
 }
 
-application { //Without this, gladle build works,but gradle run not
+application {
     mainClass.set("Main")
 }
 
