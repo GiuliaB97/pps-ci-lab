@@ -1,4 +1,3 @@
-
 plugins {
     java
     scala
@@ -15,7 +14,7 @@ repositories {
 }
 
 dependencies{
-//    implementation("commons-io:commons-io:+") //il + recupera l'ultima versione  della libreria è pericoloso usarlo
+    //implementation("commons-io:commons-io:+") //il + recupera l'ultima versione  della libreria è pericoloso usarlo
     implementation("org.scala-lang:scala-library:2.12.2")      //SCALA
     implementation("org.codehaus.groovy:groovy-all:2.4.15")    //GROOVY
 
@@ -40,6 +39,7 @@ tasks.register<JacocoReport>("applicationCodeCoverageReport") {
 
 //mainClass.set() requires the qualified name of class: pkg.class
 application {
+    //NB It usesless to add more then one class here because in output print show just the last result
     mainClass.set("Coucou")
     mainClass.set("CoucouKt")                       //If I am using a kt script there is no name crashing problem with class
                                                     // that have the same name but are located in different packages
