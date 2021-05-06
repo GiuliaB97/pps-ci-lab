@@ -13,11 +13,10 @@ repositories {
 }
 
 dependencies{
-    implementation("junit:junit:4.13.1")
-    implementation("commons-io:commons-io:+")
+//    implementation("commons-io:commons-io:+") //il + recupera l'ultima versione  della libreria è pericoloso usarlo
     implementation("org.scala-lang:scala-library:2.12.2")      //SCALA
     implementation("org.codehaus.groovy:groovy-all:2.4.15")    //GROOVY
-    implementation(kotlin("script-runtime"))                            //KOTLIN
+    implementation(kotlin("stdlib"))                            //KOTLIN
 
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.7.1")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
@@ -35,4 +34,8 @@ jacoco {
 tasks.register<JacocoReport>("applicationCodeCoverageReport") {
     executionData(tasks.run.get())
     sourceSets(sourceSets.main.get())
+}
+
+application {
+    mainClass.set("CoucouKKt")
 }
